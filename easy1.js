@@ -461,16 +461,22 @@ $('.jsul ul li').click(function () {
   }
 })
 
-
 // mousemove
+var px
 $('body').mousemove(function (e) {
-  ab = document.querySelectorAll(".sepet")[0].scrollHeight;
-  $('.f').css({ 'top': `${e.pageY - 626 - ab}px`, 'left': `${e.pageX - 24}px` })
-  if (e.pageY > 626 + ab) {
-    $('.f').css('display', 'flex')
+  px = Math.trunc($(".sec").css("width").slice(0, -2))
+  if (px < 768) {
+    $(".f").hide();
   }
   else {
-    $(".f").hide(300);
+    ab = document.querySelectorAll(".sepet")[0].scrollHeight;
+    $('.f').css({ 'top': `${e.pageY - 626 - ab}px`, 'left': `${e.pageX - 24}px` })
+    if (e.pageY > 626 + ab) {
+      $('.f').css('display', 'flex')
+    }
+    else {
+      $(".f").hide(300);
+    }
   }
 });
 $('.sec').mousemove(function (e) {
