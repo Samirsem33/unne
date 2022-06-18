@@ -828,3 +828,18 @@ footer {
   font-size: 50px;
   font-family: 'Bebas Neue';
 }
+
+@media(max-width:768px) {
+  .f{
+    display: none;
+  }
+  .js1{
+    display: none;
+  }
+  .js2{
+    display: none;
+  }
+  .js3{
+    display: none;
+  }
+}
